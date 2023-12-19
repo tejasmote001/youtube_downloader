@@ -16,19 +16,19 @@ echo "sudo mv svd mvd mvd-mp4 svd-mp4 /usr/local/bin/" >> run.sh
 
 echo "#!/bin/bash" >> svd
 echo "" >> svd
-echo "yt-dlp --write-subs --write-thumbnail -f 'bv+ba' -o \"%(title)s\" \"\$@\"" >> svd
+echo "yt-dlp --write-description --write-subs --write-thumbnail -f 'bv+ba' -o \"%(title)s\" \"\$@\"" >> svd
 
 echo "#!/bin/bash" >> mvd
 echo "" >> mvd
-echo "yt-dlp --write-subs --write-thumbnail -f 'bv+ba' -o \"%(playlist_index)s-%(title)s\" \"\$@\"" >> mvd
+echo "yt-dlp --write-description --write-subs --write-thumbnail -f 'bv+ba' -o \"%(playlist_index)s-%(title)s\" \"\$@\"" >> mvd
 
 echo "#!/bin/bash" >> svd-mp4
 echo "" >> svd-mp4
-echo "yt-dlp --write-subs --write-thumbnail -f 'bv[ext=mp4]+ba[ext=m4a]' -o \"%(title)s\" \"\$@\"" >> svd-mp4
+echo "yt-dlp --write-description --write-subs --write-thumbnail -f 'bv[ext=mp4]+ba[ext=m4a]' -o \"%(title)s\" \"\$@\"" >> svd-mp4
 
 echo "#!/bin/bash" >> mvd-mp4
 echo "" >> mvd-mp4
-echo "yt-dlp --write-subs --write-thumbnail -f 'bv[ext=mp4]+ba[ext=m4a]' -o \"%(playlist_index)s-%(title)s\" \"\$@\"" >> mvd-mp4
+echo "yt-dlp --write-description --write-subs --write-thumbnail -f 'bv[ext=mp4]+ba[ext=m4a]' -o \"%(playlist_index)s-%(title)s\" \"\$@\"" >> mvd-mp4
 
 chmod +x svd mvd mvd-mp4 svd-mp4 run.sh
 
