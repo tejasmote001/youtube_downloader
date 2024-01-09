@@ -30,6 +30,15 @@ echo "#!/bin/bash" >> mvd-mp4
 echo "" >> mvd-mp4
 echo "yt-dlp --write-description --write-subs --write-thumbnail -f 'bv[ext=mp4]+ba[ext=m4a]' -o \"%(playlist_index)s-%(title)s\" \"\$@\"" >> mvd-mp4
 
+echo "#!/bin/bash" >> svd-mp4t
+echo "" >> svd-mp4t
+echo "yt-dlp --write-description --write-subs --write-thumbnail -f 'bv*[vcodec^=avc]+ba[ext=m4a]/b[ext=mp4]/b' -o \"%(title)s\" \"\$@\"" >> svd-mp4t
+
+echo "#!/bin/bash" >> mvd-mp4t
+echo "" >> mvd-mp4t
+echo "yt-dlp --write-description --write-subs --write-thumbnail -f 'bv*[vcodec^=avc]+ba[ext=m4a]/b[ext=mp4]/b' -o \"%(playlist_index)s-%(title)s\" \"\$@\"" >> mvd-mp4t
+
+
 chmod +x svd mvd mvd-mp4 svd-mp4 run.sh
 
 bash ./run.sh
