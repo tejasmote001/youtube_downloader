@@ -11,7 +11,7 @@ fi
 echo "#!/bin/bash" >> run.sh
 echo $COMPONENTS_INSTALL >> run.sh
 echo "" >> run.sh
-echo "sudo mv svd mvd mvd-mp4 svd-mp4 /usr/local/bin/" >> run.sh
+echo "sudo mv svd mvd mvd-mp4 svd-mp4 mvd-mp4t svd-mp4t /usr/local/bin/" >> run.sh
 
 
 echo "#!/bin/bash" >> svd
@@ -39,7 +39,7 @@ echo "" >> mvd-mp4t
 echo "yt-dlp --write-description --write-subs --write-thumbnail -f 'bv*[vcodec^=avc]+ba[ext=m4a]/b[ext=mp4]/b' -o \"%(playlist_index)s-%(title)s\" \"\$@\"" >> mvd-mp4t
 
 
-chmod +x svd mvd mvd-mp4 svd-mp4 run.sh
+chmod +x svd mvd mvd-mp4 svd-mp4 mvd-mp4t svd-mp4t run.sh
 
 bash ./run.sh
 
